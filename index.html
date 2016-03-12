@@ -1,8 +1,6 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script>
-
-
   var socket = io.connect();
   socket.on('news', function (data) {
     socket.emit('my other event', { my: 'data' });
@@ -18,26 +16,7 @@
       if(!pointsContainer[data.user])
         pointsContainer[data.user] = [];
       pointsContainer[data.user].push(data);
-      //console.log(data);
-
       colors = ["green", "black","magenta","yellow","blue","red"];
-
-      /*setTimeout(function(){
-        ctx.clearRect(0, 0, c.width, c.height);
-        ctx.lineWidth = 5;
-        pointsContainer.map(function(points){
-          for (i = (points.length > 300? points.length - 300 : 1); i < points.length; i++) {
-            if(points[i - 1].x == -1 || points[i].x == -1)
-              continue
-             ctx.beginPath();
-             ctx.moveTo(points[i - 1].x /2, points[i - 1].y /2);
-             ctx.lineTo(points[i].x/2, points[i].y/2);
-             //console.log(colors[points[i].user])
-             ctx.strokeStyle = colors[points[i].user%6];
-             ctx.stroke();
-          }
-        });
-      }, 100)*/
     }
 
 
@@ -55,14 +34,22 @@
   }
   function slide() {
         ctx.clearRect(0, 0, c.width, c.height);
-        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.rect(0, 0, 540, 960);
+        ctx.fillStyle = "black";
+        ctx.fill();
+        ctx.lineWidth = 10;
+        ctx.lineCap = 'round';
+        ctx.shadowColor = '#00ff00';
+        ctx.shadowBlur = 40;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
         pointsContainer.map(function(points){
           //for (i = (points.length > 300? points.length - 300 : 1); i < points.length; i++) {
           for (i = 1; i < points.length; i++) {
-            if((points[i - 1].x == -1 || points[i].x == -1)||(time - points[i].time > 10000 )){
+            if((points[i - 1].x == -1 || points[i].x == -1)||(time - points[i].time > 1000 )){
               continue
             }
-
              ctx.beginPath();
              ctx.moveTo(points[i - 1].x /2, points[i - 1].y /2);
              ctx.lineTo(points[i].x/2, points[i].y/2);
@@ -74,9 +61,10 @@
 
 
 </script>
-
+<body style="background:black">
 <canvas id="myCanvas" width="540" height="960" style="border:1px solid #000000;">
 </canvas>
+
 <script>
 var c = document.getElementById("myCanvas");
 var lineStartCheckerContainer = [];
@@ -86,6 +74,11 @@ var time = 0;
 var timeLoop = 10;
 
 var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.rect(0, 0, 540, 960);
+ctx.fillStyle = "red";
+ctx.fill();
 
 
 </script>
+</body>
