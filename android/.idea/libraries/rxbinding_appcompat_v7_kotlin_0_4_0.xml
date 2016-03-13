@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="rxbinding-appcompat-v7-kotlin-0.4.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.jakewharton.rxbinding/rxbinding-appcompat-v7-kotlin/0.4.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.jakewharton.rxbinding/rxbinding-appcompat-v7-kotlin/0.4.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton.rxbinding/rxbinding-appcompat-v7-kotlin/0.4.0/9f2583c8ce089b0a473a2e4b041811f2037c5b6a/rxbinding-appcompat-v7-kotlin-0.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
